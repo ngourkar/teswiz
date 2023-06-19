@@ -82,4 +82,14 @@ public class VodQASteps {
     public void iAmAbleToViewSectionHeaderByNavigatingInsideNativeViewSection() {
         new VodqaBL(SAMPLE_TEST_CONTEXT.ME, Runner.getPlatform()).enterIntoNativeViewSection();
     }
+
+    @Then("App should work in background for {int} sec")
+    public void appShouldWorkInBackgroundForDefinedTime(int time) {
+        new VodqaBL().verifyAppWorksInBackground(time);
+    }
+
+    @When("I scroll vertically from {int} percent height to {int} percent height and {int} percent width")
+    public void iScrollVerticallyFromPercentHeightToPercentHeightAndPercentWidth(int fromPercentHeight, int toPercentHeight, int percentWidth) {
+        new VodqaBL().scrollVerticallyByPercentageOnVerticalSwipingScreen(fromPercentHeight, toPercentHeight, percentWidth);
+    }
 }
