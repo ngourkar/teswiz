@@ -3,6 +3,7 @@ package com.znsio.teswiz.steps;
 import com.context.SessionContext;
 import com.context.TestExecutionContext;
 import com.znsio.teswiz.businessLayer.vodqa.VodqaBL;
+import com.znsio.teswiz.entities.Direction;
 import com.znsio.teswiz.entities.SAMPLE_TEST_CONTEXT;
 import com.znsio.teswiz.runner.Drivers;
 import com.znsio.teswiz.runner.Runner;
@@ -30,11 +31,6 @@ public class VodQASteps {
     @When("I scroll from one to another element point on vertical swiping screen")
     public void scrollToElement() {
         new VodqaBL(SAMPLE_TEST_CONTEXT.ME, Runner.getPlatform()).scrollFromOneElementPointToAnother();
-    }
-
-    @Then("Element text should be visible")
-    public void isElementWithTextVisible() {
-        new VodqaBL(SAMPLE_TEST_CONTEXT.ME, Runner.getPlatform()).isElementWithTextVisible();
     }
 
     @When("I tap in the middle of the screen")
@@ -88,6 +84,17 @@ public class VodQASteps {
         new VodqaBL().verifyAppWorksInBackground(time);
     }
 
+    @Then("Element text {string} should be visible")
+    public void elementTextShouldBeVisible(String elementText) {
+        new VodqaBL(SAMPLE_TEST_CONTEXT.ME, Runner.getPlatform()).isElementWithTextVisible(elementText);
+    }
+
+    @When("I scroll {string} in dynamic layer on vertical swiping screen")
+    public void iScrollInDynamicLayerOnVerticalSwipingScreen(String direction) {
+        new VodqaBL(SAMPLE_TEST_CONTEXT.ME, Runner.getPlatform())
+                .scrollInDynamicLayerOnVerticalSwipingScreen(Direction.valueOf(direction.toUpperCase()));
+    }
+  
     @When("I scroll vertically from {int} percent height to {int} percent height and {int} percent width")
     public void iScrollVerticallyFromPercentHeightToPercentHeightAndPercentWidth(int fromPercentHeight, int toPercentHeight, int percentWidth) {
         new VodqaBL().scrollVerticallyByPercentageOnVerticalSwipingScreen(fromPercentHeight, toPercentHeight, percentWidth);
