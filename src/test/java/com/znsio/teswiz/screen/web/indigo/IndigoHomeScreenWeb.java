@@ -53,6 +53,7 @@ public class IndigoHomeScreenWeb
     private final Visual visually;
     private final WebDriver innerDriver;
     private final TestExecutionContext context;
+    private final By byCheckInButtonXpath = By.xpath("//textarea[@title='Search']");
 
     public IndigoHomeScreenWeb(Driver driver, Visual visually) {
         this.driver = driver;
@@ -159,5 +160,12 @@ public class IndigoHomeScreenWeb
         action.click().build().perform();
         visually.checkWindow(SCREEN_NAME, "Clicked on Gift Voucher");
         return IndigoGiftVouchersScreen.get();
+    }
+
+    @Override
+    public void checkIn() {
+        LOGGER.info("Clicking on check in button");
+        waitFor(5);
+        LOGGER.info("here making console log");
     }
 }

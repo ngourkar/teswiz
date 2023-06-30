@@ -39,7 +39,8 @@
           "deviceName": "iPhone 11",
           "OS": "13.5"
         }
-      ]
+      ],
+      "cloudName": "docker"
     }
   ]
 }

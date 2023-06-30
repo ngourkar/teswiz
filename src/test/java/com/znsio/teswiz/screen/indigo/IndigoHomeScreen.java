@@ -41,4 +41,6 @@ public abstract class IndigoHomeScreen {
     public abstract IndigoFlightSearchResultsScreen searchFlightOptions();
 
     public abstract IndigoGiftVouchersScreen selectGiftVouchers();
+
+    public abstract void checkIn();
 }

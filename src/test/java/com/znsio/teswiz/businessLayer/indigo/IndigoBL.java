@@ -34,9 +34,10 @@ public class IndigoBL {
 
     public FlightResultsBL searchForTicket(String journeyType, String from, String destination,
                                            String numberOfAdults) {
-        IndigoHomeScreen.get().selectJourneyType(journeyType)
-                        .selectNumberOfAdultPassengers(Integer.parseInt(numberOfAdults))
-                        .selectFrom(from).selectTo(destination).searchFlightOptions();
+//        IndigoHomeScreen.get().selectJourneyType(journeyType)
+//                        .selectNumberOfAdultPassengers(Integer.parseInt(numberOfAdults))
+//                        .selectFrom(from).selectTo(destination).searchFlightOptions();
+        IndigoHomeScreen.get().checkIn();
         return new FlightResultsBL();
     }
 }

@@ -60,6 +60,7 @@ public class Runner {
         LOGGER.info(String.format("Args: %s", args));
         String[] array = args.toArray(String[]::new);
         byte status = Main.run(array);
+//        BrowserDriverManager.captureLogs();
         Setup.cleanUpExecutionEnvironment();
         CustomReports.generateReport();
         System.exit(status);

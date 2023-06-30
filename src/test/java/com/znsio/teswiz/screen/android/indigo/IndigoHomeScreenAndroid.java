@@ -67,4 +67,10 @@ public class IndigoHomeScreenAndroid
         giftVoucherElement.click();
         return IndigoGiftVouchersScreen.get();
     }
+
+    @Override
+    public void checkIn() {
+        throw new NotImplementedException(
+                SCREEN_NAME + ":" + new Throwable().getStackTrace()[0].getMethodName() + NOT_YET_IMPLEMENTED);
+    }
 }
